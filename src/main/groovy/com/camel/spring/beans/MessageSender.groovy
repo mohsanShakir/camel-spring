@@ -14,7 +14,16 @@ class MessageSender {
 
 
     public void sendMesssage(){
-        camelTemplate.sendBody("activemq:test","blablu")
+        camelTemplate.sendBody("activemq:test",
+'''
+{
+  "title" : "Claus Clausen",
+  "type" : "Kontanthjaelp",
+  "status" : "Closed"
+}
+
+'''
+        ,)
     }
 
 
